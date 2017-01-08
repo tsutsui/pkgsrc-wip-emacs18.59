@@ -12,9 +12,9 @@ GITHUB_TAG=	${SNAPSHOTDATE}
 MAINTAINER=	tsutsui@NetBSD.org
 HOMEPAGE=	http://www.gnu.org/software/emacs/emacs.html
 COMMENT=	GNU editing macros (editor)
-LICENSE=	gnu-gpl-v1 gnu-gpl-v2
+LICENSE=	gnu-gpl-v1 AND gnu-gpl-v2 # unexelf.c is pulled from emacs22
 
-CONFLICTS=	emacs19* emacs2[0-9]*
+CONFLICTS=	emacs19-[0-9]* emacs2[0-9]-[0-9]*
 CONFLICTS+=	mule-[0-9]*
 
 WRKSRC=		${WRKDIR}/${GITHUB_PROJECT}-${SNAPSHOTDATE}
@@ -45,10 +45,11 @@ REPLACE_PERL=		etc/faq2texi.perl
 # build PATH in the dumped emacs is not a problem
 CHECK_WRKREF_SKIP+=	bin/emacs
 
-INSTALLATION_DIRS+=	bin man/man1 share/emacs/${EMACSVERSION}
+INSTALLATION_DIRS+=	bin ${PKGMANDIR}/man1 share/emacs/${EMACSVERSION}
 MAKE_DIRS+=		${VARBASE}/lock ${VARBASE}/lock/emacs
 MAKE_DIRS_PERMS+=	${VARBASE}/lock/emacs \
 			${REAL_ROOT_USER} ${REAL_ROOT_GROUP} 1777
+BUILD_DEFS+=		VARBASE
 
 do-configure:
 	cd ${WRKSRC} && \
@@ -62,7 +63,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/etc/emacsclient ${DESTDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/etc/etags ${DESTDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xemacs ${DESTDIR}${PREFIX}/bin/emacs
-	${INSTALL_MAN} ${WRKSRC}/etc/emacs.1 ${DESTDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/etc/emacs.1 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man1
 
 .include "../../mk/x11.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
