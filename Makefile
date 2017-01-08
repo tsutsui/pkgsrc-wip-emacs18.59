@@ -40,6 +40,12 @@ SUBST_FILES.pref=	Makefile build-install \
 			lisp/paths.el \
 			man/emacs.texi
 
+SUBST_CLASSES+=		x11
+SUBST_MESSAGE.x11=	Convert /usr/X11R7 to ${X11BASE}
+SUBST_STAGE.x11=	pre-configure
+SUBST_SED.x11=		-e 's,/usr/X11R7,${X11BASE},g'
+SUBST_FILES.x11=	src/s-netbsd.h
+
 REPLACE_PERL=		etc/faq2texi.perl
 
 # build PATH in the dumped emacs is not a problem
