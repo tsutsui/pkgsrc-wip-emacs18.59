@@ -1,8 +1,8 @@
 $NetBSD$
 
-SHA1 (emacs-18.59-netbsd-20181106.tar.gz) = b39da8b07ebb4f1d95bc44c4901cc869170fc66b
-RMD160 (emacs-18.59-netbsd-20181106.tar.gz) = adffd8c47546d0082fdfd46ea0ca67109a729c31
-SHA512 (emacs-18.59-netbsd-20181106.tar.gz) = 0694ac2f903f6777428a8e958c4595e8afb1c4bbf3be3e1aaabe1fe42fb97c8fd8f6cfebb26d313c3af04c24226a7e0c2791693b9385088d3468d4d68617f367
-Size (emacs-18.59-netbsd-20181106.tar.gz) = 2932537 bytes
+SHA1 (emacs-18.59-netbsd-20200918.tar.gz) = 1627199691c5ff61e42cd5eabdd4ae143bf328e0
+RMD160 (emacs-18.59-netbsd-20200918.tar.gz) = 20cf77623e06051ea7cf4a738700c8c4819bb889
+SHA512 (emacs-18.59-netbsd-20200918.tar.gz) = 8b5695f06f7e69e312fef1e9e72c0dd49050d5e5e1ead0dd4e3737463d82cf478d90b5b7e936727fbecda6e1ea4130df2c496e3f77a613a6561f905ab43616f7
+Size (emacs-18.59-netbsd-20200918.tar.gz) = 2932622 bytes
 SHA1 (patch-Makefile) = 4be41c7eeed968d12b218b83992656662be72cda
 SHA1 (patch-src_paths.h-dist) = 12dc55c1275002773723db36dafd283322079f8f
